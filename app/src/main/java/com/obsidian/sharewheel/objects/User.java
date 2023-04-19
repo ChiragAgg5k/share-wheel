@@ -1,4 +1,4 @@
-package com.obsidian.sharewheel;
+package com.obsidian.sharewheel.objects;
 
 public class User {
     private String name;

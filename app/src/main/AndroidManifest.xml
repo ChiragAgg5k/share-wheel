@@ -19,6 +19,7 @@
             android:exported="false" />
         <activity
             android:name=".HomePage"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".NewUser"

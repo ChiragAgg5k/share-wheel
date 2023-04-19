@@ -1,25 +1,26 @@
 package com.obsidian.sharewheel;
 
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HomePage extends AppCompatActivity {
 
     RelativeLayout container;
     BottomNavigationView bnView;
-    ImageView menu;
-    NavigationView sideNav;
-    DrawerLayout drawerLayout;
+    EditText pickup, whereTo;
+    Button ridePostButton;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,8 @@ public class HomePage extends AppCompatActivity {
 
         bnView = findViewById(R.id.bnView);
         container = findViewById(R.id.container);
-        menu = findViewById(R.id.menu_icon);
-        sideNav = findViewById(R.id.side_nav_view);
-        drawerLayout = findViewById(R.id.drawer_layout);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("ride-posts");
 
         bnView.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
@@ -47,9 +47,6 @@ public class HomePage extends AppCompatActivity {
         });
         bnView.setSelectedItemId(R.id.nav_home);
 
-        menu.setOnClickListener(v -> {
-            drawerLayout.openDrawer(sideNav);
-        });
 
     }
 

@@ -17,7 +17,8 @@
     <RelativeLayout
         android:layout_weight="1"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <TextView
             android:id="@+id/ridePostLocation"
@@ -30,32 +31,42 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/ridePostFare"
+            android:id="@+id/ridePostWhereTo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ridePostLocation"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Ride where to"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/ridePostFare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ridePostWhereTo"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="Ride Fare"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/ridePostTimeLeft"
+            android:id="@+id/ridePostSeatsLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ridePostFare"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="Time left"
+            android:text="Seats Left"
             android:textSize="16sp" />
 
     </RelativeLayout>
 
         <ImageView
             android:layout_width="200dp"
-            android:layout_height="170dp"
+            android:layout_height="180dp"
             android:layout_weight="1"
-            android:src="@drawable/car_vector" />
+            android:src="@drawable/taxi_image" />
 
     </LinearLayout>
 
