@@ -12,19 +12,23 @@
         android:theme="@style/Theme.ShareWheel"
         tools:targetApi="31">
         <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomePage"
             android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".NewUser"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"
-            />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".LoginPage"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"
-            />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

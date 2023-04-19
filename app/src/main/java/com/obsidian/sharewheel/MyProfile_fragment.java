@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MyProfile_fragment extends Fragment {
 
     Button logout_button;
+    TextView tv_report, tv_help;
 
     public MyProfile_fragment() {
         // Required empty public constructor
@@ -29,12 +31,30 @@ public class MyProfile_fragment extends Fragment {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         logout_button = view.findViewById(R.id.logout_button);
+        tv_report = view.findViewById(R.id.tv_report);
+        tv_help = view.findViewById(R.id.tv_help);
 
         logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(),LoginPage.class);
+                startActivity(intent);
+            }
+        });
+
+        tv_report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),ReportActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tv_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), HelpActivity.class);
                 startActivity(intent);
             }
         });
