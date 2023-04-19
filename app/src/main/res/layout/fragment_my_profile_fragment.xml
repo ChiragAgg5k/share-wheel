@@ -12,14 +12,14 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/name_of_the_user"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:id="@+id/name_of_the_user"
-            android:text="Satyam Raj"
-            android:textSize="40sp"
             android:layout_weight="1"
-            />
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="Satyam Raj"
+            android:textSize="30sp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -29,19 +29,10 @@
             android:src="@drawable/profile_image" />
 
     </LinearLayout>
-    <TextView
-        android:id="@+id/tv_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Message"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/baseline_message_24"
-        android:drawablePadding="20dp"
-        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/tv_report"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Report"
@@ -51,7 +42,7 @@
 
     <TextView
         android:id="@+id/tv_help"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Help"
@@ -73,6 +64,6 @@
         android:background="@drawable/border_background"
         android:textColor="#000"
         android:textSize="15sp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="40dp" />
 
 </LinearLayout>

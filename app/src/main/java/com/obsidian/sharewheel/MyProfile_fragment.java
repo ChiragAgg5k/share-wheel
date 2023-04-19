@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MyProfile_fragment extends Fragment {
 
     Button logout_button;
-    TextView tv_report, tv_help;
+    TextView tv_report, tv_help, name_of_the_user;
 
     public MyProfile_fragment() {
         // Required empty public constructor
@@ -33,6 +33,11 @@ public class MyProfile_fragment extends Fragment {
         logout_button = view.findViewById(R.id.logout_button);
         tv_report = view.findViewById(R.id.tv_report);
         tv_help = view.findViewById(R.id.tv_help);
+        name_of_the_user = view.findViewById(R.id.name_of_the_user);
+
+        name_of_the_user.setText(user.getDisplayName());
+
+
 
         logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
