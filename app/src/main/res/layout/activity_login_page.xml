@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_logo_image"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/taxi_baseline" />
+
+    <TextView
+        android:id="@+id/tv_welcome_back"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Hello There, Welcome Back"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:id="@+id/tv_sign_in_to_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In To Continue"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_email"
+            android:hint="Email"
+            android:transitionName="username_tran"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_password"
+            android:hint="Password"
+            android:transitionName="username_tran"
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="20dp"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password"
+            android:textAlignment="textEnd"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:elevation="20dp"
+            android:text="Go"
+            android:background="@drawable/border_background"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/tv_new_user"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New User? Sign Up?" />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

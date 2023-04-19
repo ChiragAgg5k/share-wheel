@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "95415029338",
+    "firebase_url": "https://sharewheel-f941b-default-rtdb.firebaseio.com",
+    "project_id": "sharewheel-f941b",
+    "storage_bucket": "sharewheel-f941b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95415029338:android:eaa94f76ea0a24396cd263",
+        "android_client_info": {
+          "package_name": "com.obsidian.sharewheel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95415029338-d0o4k4mgjrrv7vq4kfv8q6iu9sibpci5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAAdWDp8rxehL_icQvXRIpmDzrTg4ch2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95415029338-d0o4k4mgjrrv7vq4kfv8q6iu9sibpci5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
