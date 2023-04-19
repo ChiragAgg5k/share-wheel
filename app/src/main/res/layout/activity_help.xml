@@ -33,6 +33,7 @@
         android:layout_marginLeft="10dp"/>
 
     <TextView
+        android:id="@+id/number_one"
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,9 +41,11 @@
         android:drawableLeft="@drawable/baseline_circle_24"
         android:layout_marginTop="10dp"
         android:drawablePadding="10dp"
-        android:text="108"/>
+        android:text="108"
+        android:autoLink="phone"/>
 
     <TextView
+        android:id="@+id/number_two"
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,13 +53,8 @@
         android:drawableLeft="@drawable/baseline_circle_24"
         android:layout_marginTop="10dp"
         android:drawablePadding="10dp"
-        android:text="911"/>
+        android:text="911"
+        android:autoLink="phone"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="call"
-        android:textColor="#000"
-        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
