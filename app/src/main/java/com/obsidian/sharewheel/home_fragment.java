@@ -1,12 +1,18 @@
 package com.obsidian.sharewheel;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +20,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.obsidian.sharewheel.adaptors.RidePostAdaptor;
+import com.obsidian.sharewheel.objects.RidePost;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,8 +38,11 @@ public class home_fragment extends Fragment {
 
     private AutoCompleteTextView pickupText;
     private AutoCompleteTextView dropText;
-
+    private TextView priceText;
+    RadioGroup seat_radio;
     RecyclerView ridePostRecycler;
+    Button ridePostButton;
+    DatabaseReference databaseReference, userDatabaseReference;
 
     public home_fragment() {
         // Required empty public constructor
@@ -40,6 +55,12 @@ public class home_fragment extends Fragment {
 
         pickupText = view.findViewById(R.id.ridePostPickupInput);
         dropText = view.findViewById(R.id.ridePostWhereToInput);
+        priceText = view.findViewById(R.id.ridePostPriceInput);
+        ridePostButton = view.findViewById(R.id.ridePostButton);
+
+        seat_radio = view.findViewById(R.id.seat_radio);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("RidePosts");
 
         ArrayList<String> placeNames = new ArrayList<>();
         try {
@@ -74,6 +95,70 @@ public class home_fragment extends Fragment {
             }
         });
 
+        ridePostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String pickup = pickupText.getText().toString().trim();
+                String drop = dropText.getText().toString().trim();
+                String price = priceText.getText().toString().trim();
+
+                int selectedId = seat_radio.getCheckedRadioButtonId();
+
+                if (pickup.isEmpty()) {
+                    pickupText.setError("Pickup location is required");
+                    pickupText.requestFocus();
+                    return;
+                }
+
+                if (drop.isEmpty()) {
+                    dropText.setError("Drop location is required");
+                    dropText.requestFocus();
+                    return;
+                }
+
+                if (price.isEmpty()) {
+                    priceText.setError("Price is required");
+                    priceText.requestFocus();
+                    return;
+                }
+
+                int selectedSeats;
+
+                if (selectedId == -1) {
+                    Toast.makeText(getContext(), "Please select number of seats", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    switch (selectedId) {
+                        case R.id.seat_1:
+                            selectedSeats = 1;
+                            break;
+                        case R.id.seat_2:
+                            selectedSeats = 2;
+                            break;
+                        case R.id.seat_3:
+                            selectedSeats = 3;
+                            break;
+                        case R.id.seat_4:
+                            selectedSeats = 4;
+                            break;
+                        default:
+                            selectedSeats = 0;
+                    }
+
+                }
+
+                RidePost ridePost = new RidePost(pickup, drop, selectedSeats,price);
+                String key = databaseReference.push().getKey();
+                databaseReference.child(key).setValue(ridePost);
+
+                pickupText.setText("");
+                dropText.setText("");
+                priceText.setText("");
+                seat_radio.clearCheck();
+                Toast.makeText(getContext(), "Ride Posted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         return view;
     }
 
@@ -83,13 +168,27 @@ public class home_fragment extends Fragment {
 
         ridePostRecycler = view.findViewById(R.id.ridePostRecycler);
 
-        ArrayList<String> ridePostList = new ArrayList<>();
-        ridePostList.add("1");
-        ridePostList.add("2");
-        ridePostList.add("3");
+        ArrayList<RidePost> ridePostList = new ArrayList<>();
+        databaseReference = FirebaseDatabase.getInstance().getReference("RidePosts");
 
-        RidePostAdaptor adaptor = new RidePostAdaptor(ridePostList);
-        ridePostRecycler.setAdapter(adaptor);
-        ridePostRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ridePostList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    RidePost ridePost = dataSnapshot.getValue(RidePost.class);
+                    ridePostList.add(ridePost);
+                }
+
+                RidePostAdaptor adaptor = new RidePostAdaptor(ridePostList);
+                ridePostRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+                ridePostRecycler.setAdapter(adaptor);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

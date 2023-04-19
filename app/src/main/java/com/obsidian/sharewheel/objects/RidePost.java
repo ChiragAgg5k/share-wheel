@@ -7,9 +7,7 @@ public class RidePost {
 
     private String pickup;
     private String whereTo;
-    private String date;
-    private String time;
-    private String seats;
+    private int seats;
     private String price;
     private String id;
     FirebaseUser user;
@@ -17,11 +15,9 @@ public class RidePost {
     public RidePost() {
     }
 
-    public RidePost(String pickup, String whereTo, String date, String time, String seats, String price) {
+    public RidePost(String pickup, String whereTo, int seats, String price) {
         this.pickup = pickup;
         this.whereTo = whereTo;
-        this.date = date;
-        this.time = time;
         this.seats = seats;
         this.price = price;
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -46,27 +42,11 @@ public class RidePost {
         this.whereTo = whereTo;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getSeats() {
+    public int getSeats() {
         return seats;
     }
 
-    public void setSeats(String seats) {
+    public void setSeats(int seats) {
         this.seats = seats;
     }
 

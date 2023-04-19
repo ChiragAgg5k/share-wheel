@@ -18,7 +18,7 @@
         android:id="@+id/tv_appName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Chalo Toh Chalo"
+        android:text="Share Wheel"
         android:textAlignment="center"
         android:textSize="45sp"
         android:layout_marginTop="10dp"
@@ -29,7 +29,7 @@
         android:id="@+id/tv_appDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fikar not and Chalo toh"
+        android:text="Share your ride with others"
         android:textSize="25sp"
         android:textAlignment="center"
         android:layout_marginTop="15dp"/>
