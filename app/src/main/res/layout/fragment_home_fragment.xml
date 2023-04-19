@@ -7,54 +7,67 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ridePostPickupInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Enter Pickup Location">
+        android:layout_margin="8dp"
+        android:hint="Enter Pickup Location"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         >
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/ridePostPickupInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text" />
+            android:inputType="text"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingLeft="10dp"
+            android:completionThreshold="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ridePostWhereToInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Enter Where to Location"
         android:layout_below="@+id/ridePostPickupInputLayout"
-        android:layout_margin="10dp"
-        android:hint="Enter Where to Location">
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         >
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/ridePostWhereToInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text" />
+            android:inputType="text"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingLeft="10dp"
+            android:completionThreshold="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ridePostPriceInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Enter Price"
         android:layout_below="@+id/ridePostWhereToInputLayout"
-        android:layout_margin="10dp"
-        android:hint="Enter Price">
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         >
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/ridePostPriceInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text" />
+            android:inputType="text"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingLeft="10dp"
+            android:completionThreshold="1"/>
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

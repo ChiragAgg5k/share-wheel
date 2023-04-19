@@ -29,8 +29,6 @@ public class HomePage extends AppCompatActivity {
 
         bnView = findViewById(R.id.bnView);
         container = findViewById(R.id.container);
-        pickup = findViewById(R.id.ridePostPickupInput);
-        whereTo = findViewById(R.id.ridePostWhereToInput);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("ride-posts");
 
