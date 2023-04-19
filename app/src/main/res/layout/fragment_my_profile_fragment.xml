@@ -30,6 +30,7 @@
 
     </LinearLayout>
     <TextView
+        android:id="@+id/tv_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Message"
@@ -39,6 +40,7 @@
         android:textSize="20sp"/>
 
     <TextView
+        android:id="@+id/tv_report"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,6 +50,7 @@
         android:drawablePadding="20dp"/>
 
     <TextView
+        android:id="@+id/tv_help"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
