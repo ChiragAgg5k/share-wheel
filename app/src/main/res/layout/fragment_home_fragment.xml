@@ -6,35 +6,45 @@
     tools:context=".home_fragment">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ridePostPickupInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ridePostPickupInputLayout"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
         android:hint="Enter Pickup Location"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
     >
 
-        <EditText
+        <AutoCompleteTextView
+            android:id="@+id/pickupText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingLeft="10dp"
+            android:completionThreshold="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ridePostWhereToInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ridePostWhereToInputLayout"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
         android:hint="Enter Where to Location"
         android:layout_below="@+id/ridePostPickupInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         >
 
-        <EditText
+        <AutoCompleteTextView
+            android:id="@+id/dropText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:paddingLeft="10dp"
+            android:completionThreshold="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
