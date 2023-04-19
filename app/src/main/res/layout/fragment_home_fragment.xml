@@ -6,55 +6,83 @@
     tools:context=".home_fragment">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ridePostPickupInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ridePostPickupInputLayout"
         android:layout_margin="10dp"
-        android:hint="Enter Pickup Location"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-    >
+        android:hint="Enter Pickup Location">
+        >
 
         <EditText
+            android:id="@+id/ridePostPickupInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text"/>
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ridePostWhereToInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ridePostWhereToInputLayout"
-        android:layout_margin="10dp"
-        android:hint="Enter Where to Location"
         android:layout_below="@+id/ridePostPickupInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:layout_margin="10dp"
+        android:hint="Enter Where to Location">
         >
 
         <EditText
+            android:id="@+id/ridePostWhereToInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text"/>
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ridePostPriceInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ridePostWhereToInputLayout"
+        android:layout_margin="10dp"
+        android:hint="Enter Price">
+        >
+
+        <EditText
+            android:id="@+id/ridePostPriceInput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/ridePostButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ridePostPriceInputLayout"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/border_background"
+        android:elevation="20dp"
+        android:text="Start sharing ride" />
+
 
     <TextView
-        android:layout_below="@+id/ridePostWhereToInputLayout"
         android:id="@+id/availableRidesLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ridePostButton"
+        android:layout_margin="10dp"
         android:text="Available Rides"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_margin="10dp"
-        />
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ridePostRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ridePostRecycler"
-        android:layout_below="@+id/availableRidesLabel"
-        />
+        android:layout_below="@+id/availableRidesLabel" />
 
 </RelativeLayout>
