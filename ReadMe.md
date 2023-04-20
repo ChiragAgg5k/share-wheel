@@ -1,4 +1,4 @@
-# Share Well
+# Share Wheel
 
 This is an Android app developed for the students of Bennett University to book sharing cabs and taxis. It is developed using Java and XML and is compatible with Android devices running version 10 and above.
 
